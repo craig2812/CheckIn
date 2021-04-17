@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
+import Face from './Face';
+import workers from "./workers"
+
 
 function App() {
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="container">
+        <nav>
+            <img src={logo} alt="logo"/> 
+            <button id="visitorsBut">Visitors</button>
+            <button id="usersBut">Users</button>
+            <h2>CheckIt!</h2>
+      </nav>
+        <main className="faces">
+          {workers.map(person =>
+          <Face src={person.src} name={person.name} id={person.id}/>
+          )}
+          </main>
+            <div id="sidebar">SIDEBAR will go here</div>
+         </div>
   );
 }
 
