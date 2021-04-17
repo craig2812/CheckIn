@@ -1,12 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import css from "./Face.module.css"
 
 function Face({name, id, src}) {
+const[checked, setChecked] = useState("In");
+
+function handleClick(){
+   
+    setChecked(checked === "In" ? "Out": "In")
+}
     return (
-        <div >
-            <img className={css.facesImage} src={`${src}`} alt="FaceOne" />
+        <button onClick={handleClick} className={css[checked]}>
+            <img className={css.image} src={`${src}`} alt="FaceOne" />
             <p>{name}</p>
-        </div>
+        </button>
     )
 }
 

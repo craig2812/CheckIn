@@ -1,7 +1,25 @@
-.facesImage{
+.image{
     border-radius: 50%;
-    height: 100px;
+    border-width: 5%;
+        height: 100px;
     width: 130px;
     margin: 5%
+}
+
+
+.Out img{
+visibility: hidden;
+}
+.Out p{
+    /* font-size: 400%; */
+    }
+
+.In{
+background-color: lightpink;
+}
+
+button{
+    border-radius: 25px;
+    background-color: #75aad8;
 }
 
