@@ -12,6 +12,7 @@ visibility: hidden;
 }
 .Out p{
     /* font-size: 400%; */
+    background-image: url("./out.png")
     }
 
 .In{

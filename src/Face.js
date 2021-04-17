@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import css from "./Face.module.css"
 
 function Face({name, id, src}) {
-const[checked, setChecked] = useState("In");
+const[checked, setChecked] = useState("Out");
 
 function handleClick(){
    
