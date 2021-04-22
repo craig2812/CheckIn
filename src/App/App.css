@@ -1,0 +1,55 @@
+.MainContainer{
+  display:grid;
+  height:100vh;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 2fr 8fr;
+  grid-template-areas:
+    "nav nav"
+    "main sidebar";
+  grid-gap: 0.2rem;
+}
+
+
+main{
+  background: #36e98f;
+  grid-area:main;
+}
+
+#sidebar{
+  background: green;
+  grid-area:sidebar;
+}
+
+#navBar{
+  background: rgb(193, 250, 193);
+  grid-area:nav;
+}
+
+
+
+@media only screen and (max-width:550px){
+  .container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.6fr
+      0.2fr;
+    grid-template-areas:
+      "nav"
+      "main"
+      "sidebar"
+  }
+}
+
+/* Staff Display CSS */
+.staff{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  overflow-y:scroll;
+}
+@media only screen and (max-width:550px){
+  .staff{
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow-y:scroll;
+  }
+}
+
+

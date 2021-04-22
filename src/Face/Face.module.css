@@ -10,13 +10,12 @@
 .Out img{
 visibility: hidden;
 }
-.Out p{
-    /* font-size: 400%; */
-    background-image: url("./out.png")
+.Out {
+    background-color: rgb(91, 202, 91);
     }
 
 .In{
-background-color: lightpink;
+background-color: rgb(114, 82, 202);
 }
 
 button{

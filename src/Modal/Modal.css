@@ -1,0 +1,10 @@
+/* .modal-60w{
+    width: 100vh;
+    height: 20vh
+} */
+
+.container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 50px;
+}
