@@ -19,7 +19,7 @@ function AlertDialog({time, name, buttonText, submit}) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button variant="outlined" color="primary" onClick={handleClickOpen} style={{backgroundColor:"#80d95f", color: 'black'}}>
       {`Click to ${buttonText} at ${time}`}</Button>
       <Dialog
         open={open}

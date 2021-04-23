@@ -4,7 +4,10 @@ import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import css from "./Modal.css"
 import AlertDialog from "../Alert"
-import TimePicker from 'react-time-picker'
+// import TimePicker from 'react-time-picker'
+import { TimePicker } from 'antd';
+import moment from 'moment';
+
 
 function CheckInModal(props) {
     const [shiftStart, setShiftStart] = useState("07:00")
@@ -13,6 +16,10 @@ function CheckInModal(props) {
     const [timestampIn, setTimeStampIn] = useState("00:00")
     const [timestampOut, setTimeStampOut] = useState("00:00")
     let timestamp = new Date()
+
+    function onChange(time, timeString) {
+      console.log(time, timeString);
+    }
 
     function handleTime(v){
       timeChange(v)
@@ -65,15 +72,16 @@ function CheckInModal(props) {
           
           <Container >
          <label for="appt">{props.data.body}</label>
-<TimePicker onChange={handleTime} value={time} step="300" minTime="07:00" maxTime="18:00" disableClock={true} required/>
-
+{/* <TimePicker onChange={handleTime} value={time} step="300" minTime="07:00" maxTime="18:00" disableClock={true} required/> */}
+<TimePicker onChange={handleTime} defaultValue={moment('07:00', 'HH:mm')} minuteStep="5" format="HH:mm"/>;
          </Container>
     
         </Modal.Body>
         
-        <Modal.Footer>
+        <Modal.Footer style={{justifyContent: "center"}}>
             {/* have button or submit form (date input) */}
-          <Button variant="secondary" onClick={handleCancel}>Cancel</Button>
+          <Button variant="secondary" onClick={handleCancel} style={{backgroundColor: "#ec5c63"}}>Cancel</Button>
+          {/* Alert pops up when Check IN is clicked to double confirm */}
           <AlertDialog time={time} buttonText={props.data.buttonText} name={props.name} submit={handleSumbit}/>
          
         </Modal.Footer>

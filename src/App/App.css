@@ -27,8 +27,8 @@ main{
 
 
 
-@media only screen and (max-width:550px){
-  .container{
+@media only screen and (max-width:600px){
+  .MainContainer{
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 0.6fr
       0.2fr;
@@ -45,7 +45,7 @@ main{
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   overflow-y:scroll;
 }
-@media only screen and (max-width:550px){
+@media only screen and (max-width:600px){
   .staff{
   grid-template-columns: 1fr 1fr 1fr;
   overflow-y:scroll;
