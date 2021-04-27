@@ -2,29 +2,33 @@ import React, {useState} from "react"
 import { Modal, Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import css from "./Modal.css"
+import "./Modal.css"
 import AlertDialog from "../Alert"
-// import TimePicker from 'react-time-picker'
-import { TimePicker } from 'antd';
+import TimePicker from "rc-time-picker";
+import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
 
 
+
+
 function CheckInModal(props) {
-    const [shiftStart, setShiftStart] = useState("07:00")
-    const [shiftEnd, setShiftEnd] = useState("")
-    const [time, timeChange] = useState("07:00");
+
+  let timestamp = moment()
+  let timestampTime = moment().format("LT")
+  let timestampDate = moment().format('LLLL')
+  let timestampDayDate = moment().format('dddd, LL'); 
+
+    const [shiftStart, setShiftStart] = useState("Oh wait you need to select a time")
+    const [shiftEnd, setShiftEnd] = useState("Oh wait you need to select a time")
+    // const [time, timeChange] = useState("Oh wait you need to select a time");
     const [timestampIn, setTimeStampIn] = useState("00:00")
     const [timestampOut, setTimeStampOut] = useState("00:00")
-    let timestamp = new Date()
-
-    function onChange(time, timeString) {
-      console.log(time, timeString);
-    }
 
     function handleTime(v){
-      timeChange(v)
+      // timeChange(v)
       handleTimeSubmit(v)
     }
+
 
     function handleTimeSubmit(v){
     props.checked === "In" ? setShiftStart(v) : setShiftEnd(v)
@@ -33,19 +37,19 @@ function CheckInModal(props) {
 
 
   function handleSumbit(){
-     if (props.checked === "Out") //meaning was In bvefore click - thus checking In 
+     if (props.checked === "Out") //meaning was In before click - thus checking In 
      {
-        setTimeStampOut(timestamp)
+        setTimeStampIn(timestamp)
          props.onHide()
-         console.log(`${props.name} left HDN at ${timestamp}`)
-         console.log(`${props.name} ended their shift at ${shiftEnd} on ${timestamp.toString().slice(0,15)}`)
+         console.log(`${props.name} left HDN at ${timestampDate}`)
+         console.log(`${props.name} ended their shift at ${shiftEnd} on ${timestampDayDate}`)
          return timestampIn, shiftEnd}
      
      else{
-      setTimeStampIn(timestamp)
+      setTimeStampOut(timestamp)
         props.onHide()
-        console.log(`${props.name} entered HDN at ${timestamp}`)
-        console.log(`${props.name} started their shift at ${shiftStart} on ${timestamp.toString().slice(0,15)}`)
+        console.log(`${props.name} entered HDN at ${timestampDate}`)
+        console.log(`${props.name} started their shift at ${shiftStart} on ${timestampDayDate}`)
         return timestampOut, shiftStart}
       
   }
@@ -64,25 +68,36 @@ function CheckInModal(props) {
         backdrop='static'
         >
 
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="header">
           <Modal.Title id="checkinModal">{props.data.title}</Modal.Title>
         </Modal.Header>
     
-        <Modal.Body className="show-grid" >
+        <Modal.Body className="body" >
           
           <Container >
+            
          <label for="appt">{props.data.body}</label>
-{/* <TimePicker onChange={handleTime} value={time} step="300" minTime="07:00" maxTime="18:00" disableClock={true} required/> */}
-<TimePicker onChange={handleTime} defaultValue={moment('07:00', 'HH:mm')} minuteStep="5" format="HH:mm"/>;
+<TimePicker  placeholder="Select Time"
+        use12Hours
+        showSecond={false}
+        allowEmpty={false}
+        focusOnOpen={true}
+        format="hh:mm A"
+        onChange={e => handleTime(e.format('LT'))}
+        minuteStep={5}
+        // defaultValue={moment()}
+        />
+
          </Container>
+      
     
         </Modal.Body>
         
-        <Modal.Footer style={{justifyContent: "center"}}>
+        <Modal.Footer className="footer" >
             {/* have button or submit form (date input) */}
           <Button variant="secondary" onClick={handleCancel} style={{backgroundColor: "#ec5c63"}}>Cancel</Button>
           {/* Alert pops up when Check IN is clicked to double confirm */}
-          <AlertDialog time={time} buttonText={props.data.buttonText} name={props.name} submit={handleSumbit}/>
+          <AlertDialog time={props.checked === "In" ? shiftStart : shiftEnd} buttonText={props.data.buttonText} checkedInOut={props.checked} name={props.name} submit={handleSumbit}/>
          
         </Modal.Footer>
 

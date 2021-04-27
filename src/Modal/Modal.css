@@ -3,8 +3,22 @@
     height: 20vh
 } */
 
-.container{
+.modal .container{
     display: grid;
     grid-template-columns: 3fr 1fr;
     column-gap: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
+.modal .body{
+    background-color: lightblue;
+}
+
+.modal .footer{
+    background-color: rgb(216, 240, 192);
+    justify-content: center;
+}
+
+.modal .header{
+    background-color: rgb(236, 143, 143);
 }
