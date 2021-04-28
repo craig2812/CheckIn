@@ -1,0 +1,51 @@
+.table{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(120, 81, 165);
+    grid-gap: 2px;
+}
+
+.table div{
+    background-color: white;
+    margin: 0;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.EditButton{
+    background-color: white;
+    margin: 0;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tableContents{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+    background-color: rgb(196, 241, 215);
+    grid-gap: 2px;
+}
+
+.tableContents div{
+    background-color: rgb(110, 141, 224);
+    color: whitesmoke;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    border: 2px solid rgb(0, 0, 0);
+
+    place-items: center;
+}
+
+.over{
+    color: red;
+    font-weight: bolder;
+}
+
+
+ 

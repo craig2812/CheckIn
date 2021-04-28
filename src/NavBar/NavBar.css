@@ -1,6 +1,7 @@
 nav img{
     height: 20vh;
     grid-area: logo;
+
   }
   
   
@@ -8,32 +9,46 @@ nav{
     background: #2E99F6;
     grid-area:nav;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "logo visitors users HDN";
+    grid-template-columns: auto 1fr 1fr 1fr;
+    grid-column-gap: 5%;
+    grid-template-areas: "logo visitors staff name";
   }
 
   h1{
     display:grid;
-    grid-area:HDN;
+    grid-area:name;
     place-items: center;
     /* color:  */
   }
   
-  #usersBut{
-    grid-area:users;
-    border-radius: 25px;
-    /* height: 50%; */
+  .staffBut{
+    grid-area:staff;
     align-content: center;
     align-self: center;
-    /* margin-inline: 20%; */
+    display: grid;
+    place-items: center;
+  }
+
+  .staffBut button{
+    border-radius: 20px;
+    width: 80%;  
   }
   
-  #visitorsBut{
+  .visitorsBut{
+    display: grid;
+    place-items: center;
     grid-area:visitors;
     border-radius: 25px;
     /* height: 50%; */
     align-content: center;
     align-self: center;
     /* margin-inline: 20%; */
-  
+  }
+  .visitorsBut button{
+    border-radius: 20px;
+    width: 80%;  
+  }
+
+  .routerLink{
+    width: 100%
   }

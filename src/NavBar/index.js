@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import logo from './HDNLogo.png'
 import css from "./NavBar.css"
 
@@ -6,9 +7,17 @@ import css from "./NavBar.css"
 function NavBar() {
     return (
     <nav>
-            <img src={logo} alt="logo"/> 
-            <button id="visitorsBut">Visitors</button>
-            <button id="usersBut">Users</button>
+       
+       <Link className="logo" to={`/`}>
+         <img src={logo} alt="logo"/> 
+         </Link>
+           
+         <div className="staffBut"><Link className="routerLink" to={`/StaffList`}><button > Staff</button> </Link></div>
+
+         <div className="visitorsBut"><Link className="routerLink" to={`/VisitorList`}>  <button >
+            Visitors
+           </button> </Link></div>
+            
             <h1>Check-It!</h1>
       </nav>
     )

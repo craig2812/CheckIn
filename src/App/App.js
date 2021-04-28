@@ -4,18 +4,29 @@ import workers from "../DummyData/workers"
 import React, {useState} from "react"
 import NavBar from '../NavBar';
 import SideBar from '../SideBar'
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import StaffListPage from '../StaffListPage';
+
 
 
 function App() {
 
   return (
+    <Router>
+      <Switch>
+      <Route path="/StaffList">
+            <StaffListPage />
+          </Route>
+          
+      <Route path="/">
+
       <div className="MainContainer">
        <div id="navBar"><NavBar />
        </div>
 
         <main className="staff">
           {workers.map(person =>
-          <Face src={person.src} name={person.name} id={person.id}/>
+          <Face key={person.id} src={person.src} name={person.name} id={person.id}/>
           )}
           </main>
 
@@ -24,6 +35,10 @@ function App() {
          <SideBar/>
               </div>
          </div>
+         </Route>
+
+         </Switch>
+         </Router>
   );
 }
 
