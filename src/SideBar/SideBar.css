@@ -1,0 +1,42 @@
+.noticeBox{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 2fr 1fr 1fr;
+    grid-template-areas: 
+    "title"
+    "content"
+    "date"
+    "author"
+    ;
+    background-color: lavenderblush;
+    border: 5px solid black;
+    margin-inline: 3px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.title{
+grid-area: title;
+color: rgb(98, 179, 96);
+}
+
+.content{
+    grid-area: content;
+text-align: center;
+}
+
+.author{
+    grid-area: author;
+    font-size: small;
+    text-align: right;
+    color: grey;
+
+}
+
+.date{
+    grid-area: date;
+color: grey;
+font-weight: bold;
+font-size: smaller;
+text-align: right;
+}
