@@ -10,10 +10,10 @@
 }
 
 
-main{
+/* main{
   background: #36e98f;
   grid-area:main;
-}
+} */
 
 #sidebar{
   background: green;
@@ -25,17 +25,14 @@ main{
   grid-area:nav;
 }
 
-
-
 @media only screen and (max-width:600px){
   .MainContainer{
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 0.6fr
-      0.2fr;
+    grid-template-rows: 1fr 60% 1fr;
     grid-template-areas:
-      "nav"
-      "main"
-      "sidebar"
+    "nav"
+    "main"
+    "sidebar"
   }
 }
 
@@ -44,6 +41,7 @@ main{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   overflow-y:scroll;
+  grid-area: main;
 }
 @media only screen and (max-width:600px){
   .staff{
