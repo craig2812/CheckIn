@@ -1,12 +1,13 @@
 import './App.css';
 import Face from '../Face';
 import workers from "../DummyData/workers"
-import React, {useState} from "react"
+import React from "react"
 import NavBar from '../NavBar';
 import SideBar from '../SideBar'
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import StaffListPage from '../StaffListPage';
 import AdminPage from '../AdminPage';
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 
@@ -18,13 +19,10 @@ function App() {
       <Route path="/StaffList">
             <StaffListPage />
           </Route>
-
-          <Route path="/AdminPage">
+      <Route path="/AdminPage">
             <AdminPage />
           </Route>
-          
       <Route path="/">
-
       <div className="MainContainer">
        <div id="navBar"><NavBar />
        </div>
