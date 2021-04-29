@@ -13,6 +13,8 @@ function NavBar() {
          </Link>
            
          <div className="staffBut"><Link className="routerLink" to={`/StaffList`}><button > Staff</button> </Link></div>
+        
+         <div className="adminBut"><Link className="routerLink" to={`/AdminPage`}><button > Admin</button> </Link></div>
 
          <div className="visitorsBut"><Link className="routerLink" to={`/VisitorList`}>  <button >
             Visitors

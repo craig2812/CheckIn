@@ -6,6 +6,7 @@ import NavBar from '../NavBar';
 import SideBar from '../SideBar'
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import StaffListPage from '../StaffListPage';
+import AdminPage from '../AdminPage';
 
 
 
@@ -16,6 +17,10 @@ function App() {
       <Switch>
       <Route path="/StaffList">
             <StaffListPage />
+          </Route>
+
+          <Route path="/AdminPage">
+            <AdminPage />
           </Route>
           
       <Route path="/">

@@ -1,0 +1,22 @@
+.AdminPageBox{
+      /* display: grid; */
+    /* place-content: center; */
+    margin-top: 5%;
+    margin-inline: 15%;
+    padding: 5%;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: rgb(212 147 147);
+    /* width: 60%; */
+    font-weight: bold;
+    color: white;
+ /* text-align: center; */
+}
+
+.AdminPageBox button{
+    width: 100%;
+    background-color: #75beb1;
+    border-radius: 20px;
+    margin: 10px;
+}
+
